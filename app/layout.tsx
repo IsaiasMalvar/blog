@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import SiteHeader from "@/components/SiteHeader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +34,10 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        {children}
+        <div className="relative flex min-h-screen flex-col bg-background">
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );
