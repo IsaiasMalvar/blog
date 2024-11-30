@@ -1,6 +1,7 @@
 import { posts } from "#site/content";
 import { MDXContent } from "@/components/mdx-components";
 import { notFound } from "next/navigation";
+import "@/app/mdx-styling.css";
 
 interface PostPageProps {
   params: {
@@ -9,7 +10,7 @@ interface PostPageProps {
 }
 
 async function getPostFromParams(params: PostPageProps["params"]) {
-  const slug = params.slug.join("/"); // Correct handling of slug
+  const slug = params.slug.join("/");
   const post = posts.find((post) => post.slugAsParams === slug);
 
   return post;
@@ -32,9 +33,14 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
+    <article className="container p-6 prose dark:prose-invert max-w-3xl mx-auto overflow-hidden">
       <h1 className="mb-2">{post.title}</h1>
-      <div className="prose dark:prose-invert">
+
+      {post.description ? (
+        <p className="text-xl mt-0 text-muted-foreground">{post.description}</p>
+      ) : null}
+      <hr className="my-4" />
+      <div className="break-words">
         <MDXContent code={post.body} />
       </div>
     </article>
