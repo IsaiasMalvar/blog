@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Icons } from "./icons";
 import MainNav from "./MainNav";
 import MobileNav from "./MobileNav";
+import ModeToggle from "./ModeToggle";
 
 const SiteHeader = (): React.ReactElement => {
   return (
@@ -58,6 +59,7 @@ const SiteHeader = (): React.ReactElement => {
                 <span className="sr-only">Portfolio</span>
               </div>
             </Link>
+            <ModeToggle />
             <MobileNav />
           </nav>
         </div>
