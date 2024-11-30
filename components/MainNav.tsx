@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Icons } from "./icons";
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
@@ -13,7 +12,7 @@ const MainNav = (): React.ReactElement => {
     <nav className="flex items-center space-x-2 lg:space-x-6">
       <Link href="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6 px-1" />
-        <span className="font-semibold">{siteConfig.name}</span>
+        <span className="font-semibold">FDB</span>
       </Link>
       <Link
         href={"/blog"}
