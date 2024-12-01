@@ -24,7 +24,7 @@ const MainNav = (): React.ReactElement => {
         Blog
       </Link>
       <Link
-        href={"/blog"}
+        href={"/about"}
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary hidden sm:inline-block",
           pathName === "/about" ? "text-foreground" : "text-foreground/60"
