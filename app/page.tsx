@@ -1,63 +1,80 @@
-import { ArrowDown, ArrowUp, Eye } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { MousePointerClickIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="relative h-[651px] flex items-center justify-center m-0 overflow-hidden">
-      <div className="bg-[url('/banner.webp')] bg-center h-[100%] w-1/2 m-0"></div>
-      <div className="h-full w-1/2 bg-black">
-        <h1 className=" font-mono  py-5 text-green-400">
-          {" "}
-          === Build Process: Developer Career Compiler v1.0 === [INFO]
-          Initializing Career Framework... Loading modules: education.h,
-          motivation.h, coffee.h... Done. Setting up environment variables:
-          $IMPOSTER_SYNDROME=OFF, $LEARNING_MODE=ON... Done. [INFO] Compiling
-          Fundamentals... Compiling programming_basics.c... Done. Compiling
-          data_structures.c... Done. Compiling algorithms.c... Done. Debugging
-          recursive_function.c (stack overflow fixed)... Done. [INFO] Building
-          Backend Knowledge Base... Compiling server_architecture.c... Done.
-          Compiling database_management.c... Done. Compiling REST_API.c... Done.
-          Compiling authentication_and_authorization.c... Done. Running test
-          suite: basic_backend_tests... Passed. [INFO] Deploying to Job Market
-          (Entry-Level)... Setting up profile on: LinkedIn, GitHub,
-          StackOverflow... Done. Submitting resumes... Done. Handling
-          HR_interview.c... Done. Debugging whiteboard_problem.c (null pointer
-          fixed)... Done. [INFO] Upgrading Skills for Mid-Level Role... Learning
-          Docker and Kubernetes... Done. Compiling microservices.c... Done.
-          Optimizing queries in SQL... Done. Learning caching with Redis...
-          Done. [INFO] Gaining Production Experience... Debugging legacy_code.c
-          (nightmares logged)... Done. Writing unit_tests.c (coverage: 80%)...
-          Deploying CI/CD pipeline... Done. Handling production_outage.c...
-          Done. [INFO] Promoting to Senior Developer... Compiling
-          leadership_skills.c... Done. Running mentoring_subordinates.c... Done.
-          Designing system_architecture.c... Done. Implementing
-          scale_infrastructure.c... Done. [INFO] Deploying to Management Track
-          (Optional)... Debugging work_life_balance.c... Done. Compiling
-          decision_making.c... Done. Submitting pull_request_to_retirement.c...
-          Pending Review. === Build Completed Successfully === [INFO] Backend
-          Developer Career has been built in ~20 years. [DEBUG] To run in Senior
-          Developer mode: ./backend.exe --senior [WARNING] Be cautious with
-          burnout() function; optimize regularly.
-        </h1>
-      </div>
+    <section className="w-full h-screen relative bg-gray-50 overflow-hidden z-0">
+      {Array.from({ length: 550 }).map((_, index) => {
+        const randomTop = Math.floor(Math.random() * 100);
+        const randomLeft = Math.floor(Math.random() * 100);
+        const randomRotate = Math.random() * 30 - 15;
+        const zIndex = index + 1;
+
+        const titles = [
+          "React Best Practices",
+          "Understanding APIs",
+          "Clean Code Principles",
+          "DevOps Essentials",
+          "Intro to Microservices",
+          "Frontend vs Backend",
+          "Agile Development",
+          "Unit Testing Guide",
+          "Docker for Beginners",
+          "REST vs GraphQL",
+        ];
+        const descriptions = [
+          "Learn to write maintainable React code.",
+          "Explore API integration techniques.",
+          "Write code that stands the test of time.",
+          "Streamline deployment with DevOps.",
+          "Build scalable microservices.",
+          "Key differences between frontend and backend.",
+          "Improve workflows with Agile methodologies.",
+          "Ensure reliability with thorough testing.",
+          "Containerize apps using Docker.",
+          "Choose the right API style for your project.",
+        ];
+
+        const randomTitle = titles[index % titles.length];
+        const randomDescription = descriptions[index % descriptions.length];
+
+        return (
+          <Card
+            key={index}
+            className="absolute w-[200px] p-4  shadow-md"
+            style={{
+              top: `${randomTop}%`,
+              left: `${randomLeft}%`,
+              transform: `rotate(${randomRotate}deg)`,
+              zIndex: zIndex,
+            }}
+          >
+            <CardHeader>
+              <CardTitle>{randomTitle}</CardTitle>
+              <CardDescription>{randomDescription}</CardDescription>
+            </CardHeader>
+            <CardContent></CardContent>
+          </Card>
+        );
+      })}
       <Link
         href={"/blog"}
-        className="dark:text-white dark:bg-black absolute top-0 px-3  left-1/2 -translate-x-1/2  bg-white h-full justify-center   bg-transparent flex flex-col text-center"
+        className="text-black absolute top-36 left-1/2 -translate-x-1/2 z-[999] font-terminal scale-150 text-center flex justify-center"
       >
-        <span className="sr-only">Link to blog</span> <ArrowDown size={50} />
-        <Eye size={50} />
-        <span className="text-5xl font-terminal">F</span>
-        <span className="text-5xl font-terminal">R</span>
-        <span className="text-5xl font-terminal">E</span>
-        <span className="text-5xl font-terminal">S</span>
-        <span className="text-5xl font-terminal">H</span>
-        <span className="text-5xl font-terminal">_</span>
-        <span className="text-5xl font-terminal">D</span>
-        <span className="text-5xl font-terminal">E</span>
-        <span className="text-5xl font-terminal">V</span>
-        <Eye size={50} />
-        <ArrowUp size={50} />
+        <Badge className="hover:bg-black w-[70%] text-5xl text-center flex flex-col items-center justify-center border-2 border-black relative p-7 gap-3 dark:hover:bg-white">
+          <h1 className="font-mono text-4xl ">FRESH DEV BLOG</h1>
+          <MousePointerClickIcon />
+        </Badge>
       </Link>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-screen w-[20px] z-[998] bg-black dark:bg-white"></div>
     </section>
   );
 }
