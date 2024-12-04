@@ -2,7 +2,7 @@ import { posts } from "#site/content";
 import { MDXContent } from "@/components/mdx-components";
 import { notFound } from "next/navigation";
 import "@/app/mdx-styling.css";
-import Tag from "@/components/Tag";
+import { Tag } from "@/components/Tag";
 
 interface PostPageProps {
   params: {

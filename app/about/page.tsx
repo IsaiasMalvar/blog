@@ -17,7 +17,7 @@ const About = (): React.ReactElement => {
         <div className=" flex flex-col">
           <p className="text-black dark:text-white text-4xl font-terminal">
             Hey there! My name is Isaias Malvar. After graduating in hospitality
-            management, the most euphoric moments I experienced in my line of
+            management, the most rewarding moments I experienced in my line of
             work were all related to connecting the dots with the variety of
             apps I needed to use. This is when I realised my true interest was
             for software. Specialized in backend development with strong

@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
-
 import {
   Pagination,
   PaginationContent,
@@ -16,21 +15,26 @@ interface QueryPaginationProps {
   className?: string;
 }
 
-const QueryPagination = ({ totalPages, className }: QueryPaginationProps) => {
+export function QueryPagination({
+  totalPages,
+  className,
+}: QueryPaginationProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const currentPage = Number(searchParams?.get("page")) ?? 1;
+  // Use a fallback empty object if searchParams is null
+  const currentPage = Number(searchParams?.get("page")) || 1;
 
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
 
+  // Handle the case where searchParams might be null
   const createPageURL = (pageNumber: number | string) => {
-    const params = new URLSearchParams(searchParams || {});
+    // If searchParams is null, use an empty URLSearchParams
+    const params = new URLSearchParams(searchParams?.toString() ?? "");
     params.set("page", pageNumber.toString());
     return `${pathname}?${params.toString()}`;
   };
-
   return (
     <Pagination className={className}>
       <PaginationContent>
@@ -45,7 +49,7 @@ const QueryPagination = ({ totalPages, className }: QueryPaginationProps) => {
           .map((_, index) => (
             <PaginationItem
               className="hidden sm:inline-block"
-              key={`page-button${index + 1}`}
+              key={`page-button-${index}`}
             >
               <PaginationLink
                 isActive={currentPage === index + 1}
@@ -64,6 +68,4 @@ const QueryPagination = ({ totalPages, className }: QueryPaginationProps) => {
       </PaginationContent>
     </Pagination>
   );
-};
-
-export default QueryPagination;
+}
