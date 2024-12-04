@@ -36,10 +36,11 @@ const BlogPage = async ({ searchParams }: BlogPageProps) => {
       {displayPosts?.length > 0 ? (
         <ul className="flex flex-col">
           {displayPosts.map((post) => {
-            const { slug, date, title, description } = post;
+            const { slug, date, title, description, tags } = post;
             return (
               <li key={slug}>
                 <PostItem
+                  tags={tags}
                   slug={slug}
                   date={date}
                   title={title}
