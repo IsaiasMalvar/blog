@@ -67,17 +67,13 @@ export default function Home() {
       })}
       <Link
         href={"/blog"}
-        className=" text-black absolute top-72 left-1/2 -translate-x-1/2 z-[999] font-terminal scale-150 text-center flex justify-center"
+        className=" text-black absolute top-72 left-1/2 w-[2000px] -translate-x-1/2 z-[999] font-terminal scale-150 text-center flex justify-center "
       >
-        <Badge className="bg-black hover:bg-black w-[75%] text-5xl text-center flex flex-col items-center justify-center border-2 border-black relative p-10 gap-3 dark:hover:bg-white">
-          <h1 className="font-mono text-4xl ">FRESH DEV BLOG</h1>
-          <MousePointerClickIcon />
+        <Badge className="bg-black hover:bg-black w-[75%] text-xl text-center flex flex-col items-center justify-center border-2 border-black relative p-6 gap-3 dark:hover:bg-white -rotate-45 shadow-md">
+          <h1 className="font-mono text-xl md:text-5xl">FRRRRESH DEV BLOG!</h1>
+          <MousePointerClickIcon size={50} />
         </Badge>
       </Link>
-      <div className="shadow-2xl  absolute bottom-0 left-1/2 -translate-x-1/2 h-[500px] w-[25px] z-[998] bg-black dark:bg-white"></div>
-
-      <div className="shadow-2xl  absolute top-[50%] left-[55%]  h-[25px] w-[50%] z-[998] bg-black dark:bg-white"></div>
-      <div className="shadow-2xl  absolute top-[50%]   h-[25px] w-[50%] z-[998] bg-black dark:bg-white"></div>
     </section>
   );
 }
