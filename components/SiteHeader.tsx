@@ -10,7 +10,7 @@ import ModeToggle from "./ModeToggle";
 const SiteHeader = (): React.ReactElement => {
   return (
     <header className="sticky top-0 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex  h-14 max-w-screen-2xl items-center justify-between">
+      <div className="flex  h-14 max-w-full 2xl items-center justify-between">
         <MainNav />
         <div className="flex items-center  px-1">
           <nav className="flex items-center">

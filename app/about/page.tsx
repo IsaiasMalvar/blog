@@ -15,14 +15,15 @@ const About = (): React.ReactElement => {
           />
         </div>
         <div className=" flex flex-col">
-          <p className="text-white text-2xl">
+          <p className="text-black dark:text-white text-4xl font-terminal">
             Hey there! My name is Isaias Malvar. After graduating in hospitality
             management, the most euphoric moments I experienced in my line of
             work were all related to connecting the dots with the variety of
             apps I needed to use. This is when I realised my true interest was
-            for coding. Specialized in backend development with strong fullstack
-            foundations, I use this blog to offer my fresh and admittedly naive
-            perspectives and intrigues from all branches of software!
+            for software. Specialized in backend development with strong
+            fullstack foundations, I use this blog to offer my fresh and
+            admittedly naive perspectives and intrigues from all branches of
+            coding wizardry!
           </p>
         </div>
       </div>
