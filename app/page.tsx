@@ -67,7 +67,7 @@ export default function Home() {
       })}
       <Link
         href={"/blog"}
-        className=" text-black absolute top-72 left-1/2 w-[2000px] -translate-x-1/2 z-[999] font-terminal scale-150 text-center flex justify-center "
+        className=" text-black absolute top-72 left-1/2 w-[2000px] -translate-x-1/2 z-[999] font-terminal scale-150 text-center flex justify-center  "
       >
         <Badge className="bg-black hover:bg-black w-[75%] text-xl text-center flex flex-col items-center justify-center border-2 border-black relative p-6 gap-3 dark:hover:bg-white -rotate-45 shadow-md">
           <h1 className="font-mono text-xl md:text-5xl">FRRRRESH DEV BLOG!</h1>
