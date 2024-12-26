@@ -69,7 +69,7 @@ export default function Home() {
         href={"/blog"}
         className=" text-black absolute top-72 left-1/2 w-[2000px] -translate-x-1/2 z-[999] font-terminal  text-center flex justify-center  "
       >
-        <Badge className="bg-black hover:bg-black dark:bg-white hover:dark:bg-white w-[%] text-xl text-center flex flex-col items-center justify-center border-2 border-black relative p-6 gap-3 dark:hover:bg-white -rotate-45 shadow-md">
+        <Badge className="bg-black hover:bg-black dark:bg-white  w-[%] text-xl text-center flex flex-col items-center justify-center border-2 border-black relative p-6 gap-3  -rotate-45 shadow-md">
           <h1 className="font-mono text-xl md:text-5xl">FRRRRESH DEV BLOG!</h1>
           <MousePointerClickIcon size={50} />
         </Badge>
