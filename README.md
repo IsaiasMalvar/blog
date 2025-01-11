@@ -28,8 +28,8 @@ Welcome to **Fresh Dev Blog**, a modern, stylish blogging platform built with th
 
 ## Live Site  
 
-Explore the live version of **My First Blog** and dive into engaging, beautifully formatted content:  
-**[Visit My First Blog](https://blog-pkuo.vercel.app/)**  
+Explore the live version of **Fresh Dev Blog** and dive into engaging, beautifully formatted content:  
+**[Visit the blog!](https://blog-pkuo.vercel.app/)**  
 
 ---  
 
